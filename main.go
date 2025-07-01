@@ -17,11 +17,11 @@ func isAscii(str string) bool {
 
 func main() {
 	args := os.Args[1:]
-	sentence := args[0]
 	if len(args) != 1 {
 		fmt.Println("Invalid number of arguements.")
 		return
 	}
+	sentence := args[0]
 	if !isAscii(sentence) {
 		fmt.Println("Only Ascii is accepted.")
 		return
