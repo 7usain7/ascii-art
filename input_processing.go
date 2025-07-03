@@ -41,17 +41,23 @@ func input(str string) error {
 			all_results = append(all_results, []string{})
 		}
 	}
+	empty := true
+	for i, result := range all_results {
+		if len(all_results)-1 == i && i != 0 && empty && len(result) == 0 {
+			break
+		}
 
-	for _, result := range all_results {
 		if len(result) == 0 {
 			fmt.Println()
 			continue
+		} else {
+			empty = false
 		}
 
-		for i := 1; i < 9; i++ {
-			for j := range len(result) {
-				if i+j*9 < len(result) {
-					fmt.Print(result[i+j*9])
+		for j := 1; j < 9; j++ {
+			for k := range len(result) {
+				if j+k*9 < len(result) {
+					fmt.Print(result[j+k*9])
 				}
 			}
 			fmt.Println()
