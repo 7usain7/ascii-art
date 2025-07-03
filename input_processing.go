@@ -8,7 +8,7 @@ import (
 )
 
 func input(str string) error {
-	file, err := os.Open("standard.txt")
+	file, err := os.Open("models/standard.txt")
 	if err != nil {
 		return err
 	}
