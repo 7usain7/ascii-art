@@ -6,9 +6,8 @@ import (
 )
 
 func isAscii(str string) bool {
-	// runes := []rune(str)
-	for _, e := range str {
-		if e > 127 {
+	for _, r := range str {
+		if r > 127 {
 			return false
 		}
 	}
@@ -21,11 +20,13 @@ func main() {
 		fmt.Println("Invalid number of arguements.")
 		return
 	}
+
 	sentence := args[0]
 	if !isAscii(sentence) {
 		fmt.Println("Only Ascii is accepted.")
 		return
 	}
+
 	if sentence != "" {
 		err := input(sentence)
 		if err != nil {
@@ -33,5 +34,4 @@ func main() {
 			return
 		}
 	}
-	// fmt.Println(sentence[0])
 }
